@@ -42,3 +42,8 @@ npm install && npm run build, then chrome://extensions -> Load unpacked -> dist/
 ## Bundle hygiene
 - ECharts imported via `echarts/core` + only the needed charts/components/renderers (not the full `echarts`). StatsView is `defineAsyncComponent`-lazy so ECharts (~520KB) loads only when the Stats tab opens; main popup bundle stays ~102KB.
 - Literal `{{ }}` in Vue templates breaks the vite:vue compiler — use a JS const then `{{ constName }}` / `:placeholder`.
+
+## README / docs convention (decided 2026-07-14)
+- GitHub default README is ENGLISH: `README.md` = English (what visitors see first). Chinese lives in `README.zh.md`.
+- The two files link each other at the TOP via a centered language bar: English doc shows `**English** · [中文](README.zh.md)`; Chinese doc shows `[English](README.md) · **中文**`.
+- There is NO `README.en.md` anymore — it was renamed into `README.md` (English is now the default). Do NOT recreate `README.en.md` (it would duplicate). Edit English in `README.md`, edit Chinese in `README.zh.md`.

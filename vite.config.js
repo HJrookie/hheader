@@ -17,6 +17,9 @@ export default defineConfig({
   base: './',
   publicDir: resolve(projectRoot, 'public'),
   plugins: [vue()],
+  server: {
+    port: 3040,
+  },
   build: {
     outDir: resolve(projectRoot, 'dist'),
     emptyOutDir: true,
